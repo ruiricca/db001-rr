@@ -1,3 +1,5 @@
+USE biblioteca;
+
 CREATE TABLE `autores` (
   `autor_id` int NOT NULL AUTO_INCREMENT,
   `nome` varchar(45) NOT NULL,
