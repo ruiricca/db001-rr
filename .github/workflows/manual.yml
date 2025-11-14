@@ -18,6 +18,16 @@ on:
         # The data type of the input
         type: string
 
+      name:
+        # Friendly description to be shown in the UI instead of 'name'
+        description: 'Criar tabela'
+        # Default value if no value is explicitly provided
+        query: 'cr'
+        # Input has to be provided for the workflow to run
+        required: true
+        # The data type of the input
+        type: string
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "greet"
@@ -29,4 +39,4 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-      run: 
+      run: mysql -h ${{ input.name }} -u gestor -p Abcd1234
