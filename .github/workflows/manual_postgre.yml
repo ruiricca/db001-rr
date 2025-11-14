@@ -37,6 +37,6 @@ jobs:
           PGDATABASE: postgres
           PGUSER: ${{ secrets.USER }}
           PGPASSWORD: ${{ secrets.PASS }}
-        run: |
+       run: |
           psql -c "SELECT version();"
   
