@@ -39,5 +39,5 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-      run: mysql -u ${{ secret.user }} -p ${{ secret.pass }} -h ${{ input.name }} 
-           mysql -u ${{ secret.user }} -p < ${{ input.query }}
+      run: mysql -u gestor -p Abcd1234 -h ${{ input.name }} 
+           mysql -u gestor -p < ${{ input.query }}
