@@ -12,7 +12,7 @@ on:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'conectar sql'
         # Default value if no value is explicitly provided
-        name: '---'
+        default: '---'
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
@@ -22,7 +22,7 @@ on:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'Criar tabela'
         # Default value if no value is explicitly provided
-        query: 'create-autores.sql'
+        default: 'create-autores.sql'
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
@@ -39,4 +39,5 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-      run: mysql -h ${{ input.name }} -u gestor -p Abcd1234
+      run: mysql -h ${{ input.name }} -u ${{ secret.user }} -p ${{ secret.pass }}
+      run: mysql -u ${{ secret.user }} -p < ${{ input.query }}
