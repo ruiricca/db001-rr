@@ -35,8 +35,8 @@ jobs:
           PGHOST: ${{ inputs.name }}
           PGPORT: 5432
           PGDATABASE: postgres
-          PGUSER: ${{ secrets.DB_USER }}
-          PGPASSWORD: ${{ secrets.DB_PASSWORD }}
+          PGUSER: ${{ secrets.USER }}
+          PGPASSWORD: ${{ secrets.PASS }}
         run: |
           psql -c "SELECT version();"
   
