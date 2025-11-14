@@ -22,7 +22,7 @@ on:
         # Friendly description to be shown in the UI instead of 'name'
         description: 'Criar tabela'
         # Default value if no value is explicitly provided
-        query: 'cr'
+        query: 'create-autores.sql'
         # Input has to be provided for the workflow to run
         required: true
         # The data type of the input
