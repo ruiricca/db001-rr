@@ -39,5 +39,5 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-    - run: mysql -u gestor -p Abcd1234 -h db001-rr.mysql.database.azure.com < ${{ input.query }}
+    - run: mysql -u gestor -p Abcd1234 -h ${{ github.event.inputs.name}} < ${{ github.event.inputs.query }}
 #           mysql -u gestor -p < ${{ input.query }}
